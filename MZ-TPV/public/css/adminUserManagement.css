@@ -1,0 +1,115 @@
+.user-management-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #e5e5dc;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.sidebar h2 {
+    margin-bottom: 1rem;
+}
+
+.sidebar .nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .nav li {
+    margin-bottom: 1rem;
+}
+
+.sidebar .nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.user-management {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f5f5ef;
+}
+
+.user-management h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.users-list {
+    margin-top: 2rem;
+}
+
+.user-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+}
+
+.edit-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.edit-user-form {
+    margin-top: 3rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.edit-user-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.edit-user-form input[type="text"],
+.edit-user-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.role-buttons label {
+    margin-right: 1rem;
+}
+
+button[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-user-button,
+.add-user-button:visited {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    
+}
