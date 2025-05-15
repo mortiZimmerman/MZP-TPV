@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Dashboard</title>
- <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
+    <style>
+        .action {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .action:hover {
+            transform: scale(1.05);
+        }
+
+        .quick-actions a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,18 +38,26 @@
         <h2>Add products and manage employees</h2>
 
         <section class="quick-actions">
-            <div class="action" title="Manage Products">
-                <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/stocks_aozyge.png" alt="Manage Products" class="dashBoardButtonImage"/>
-                <span>Manage Products</span>
-            </div>
-            <div class="action" title="Add Waiter">
-                <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="Add Waiter" class="dashBoardButtonImage"/>
-                <span>Add Waiter</span>
-            </div>
-            <div class="action" title="Manage Users">
-                <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/admin_waiters_btmixj.png" alt="Manage Users" class="dashBoardButtonImage"/>
-                <span>Manage Users</span>
-            </div>
+            <a href="#">
+                <div class="action" title="Manage Products">
+                    <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/stocks_aozyge.png" alt="Manage Products" class="dashBoardButtonImage"/>
+                    <span>Manage Products</span>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="action" title="Add Waiter">
+                    <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="Add Waiter" class="dashBoardButtonImage"/>
+                    <span>Add Waiter</span>
+                </div>
+            </a>
+
+            <a href="{{ route('admin.users.index') }}">
+                <div class="action" title="Manage Users">
+                    <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/admin_waiters_btmixj.png" alt="Manage Users" class="dashBoardButtonImage"/>
+                    <span>Manage Users</span>
+                </div>
+            </a>
         </section>
 
         <section class="management">
