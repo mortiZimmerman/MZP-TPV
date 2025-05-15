@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('admin.partials.header')
 
 @section('content')
 <div class="user-management-container">
@@ -9,7 +10,7 @@
             <li><a href="{{ route('admin.users.index') }}">👤 User Management</a></li>
         </ul>
 
-        <!-- Add User Button -->
+        
         <div class="add-user">
             <a href="{{ route('admin.users.create') }}" class="add-user-button">
                 ➕ Add New User

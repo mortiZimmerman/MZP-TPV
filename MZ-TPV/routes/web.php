@@ -27,5 +27,5 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('users', UserController::class);
     });
 });
-
+Route::get('/admin/other', [OtherController::class, 'index'])->name('admin.someOtherPage');
 require __DIR__.'/auth.php';

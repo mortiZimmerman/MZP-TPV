@@ -1,34 +1,54 @@
 @extends('layouts.app')
+@include('admin.partials.header')
 
 @section('content')
-    <h1>Editar usuario</h1>
+    <div class="form-container">
+        <h1>Edit User</h1>
 
-    <form action="{{ route('admin.users.update', $user) }}" method="POST">
-        @csrf
-        @method('PATCH')
+        <form action="{{ route('admin.users.update', $user->id) }}" method="POST" class="styled-form">
+            @csrf
+            @method('PUT')
 
-        <label>Nombre</label><br>
-        <input type="text" name="name" value="{{ old('name', $user->name) }}"><br>
-        @error('name') <small style="color:red;">{{ $message }}</small><br> @enderror
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}">
+                @error('name') <small class="error">{{ $message }}</small> @enderror
+            </div>
 
-        <label>Email</label><br>
-        <input type="email" name="email" value="{{ old('email', $user->email) }}"><br>
-        @error('email') <small style="color:red;">{{ $message }}</small><br> @enderror
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}">
+                @error('email') <small class="error">{{ $message }}</small> @enderror
+            </div>
 
-        <label>Rol</label><br>
-        <select name="role">
-            <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Admin</option>
-            <option value="camarero" {{ old('role', $user->role) == 'camarero' ? 'selected' : '' }}>Camarero</option>
-        </select><br>
-        @error('role') <small style="color:red;">{{ $message }}</small><br> @enderror
+            <div class="form-group">
+                <label>Role</label>
+                <div class="role-buttons">
+                    <label><input type="radio" name="role" value="waiter" {{ old('role', $user->role) == 'waiter' ? 'checked' : '' }}> Waiter</label>
+                    <label><input type="radio" name="role" value="admin" {{ old('role', $user->role) == 'admin' ? 'checked' : '' }}> Admin</label>
+                </div>
+                @error('role') <small class="error">{{ $message }}</small> @enderror
+            </div>
 
-        <label>Contraseña (dejar en blanco para no cambiar)</label><br>
-        <input type="password" name="password"><br>
-        @error('password') <small style="color:red;">{{ $message }}</small><br> @enderror
+            <div class="form-group">
+                <label for="password">New Password (optional)</label>
+                <input type="password" name="password" id="password">
+                @error('password') <small class="error">{{ $message }}</small> @enderror
+            </div>
 
-        <label>Confirmar contraseña</label><br>
-        <input type="password" name="password_confirmation"><br><br>
+            <div class="form-group">
+                <label for="password_confirmation">Confirm New Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation">
+            </div>
 
-        <button type="submit">Actualizar</button>
-    </form>
+            <div class="form-actions">
+                <a href="{{ route('admin.users.index') }}" class="cancel-btn">Cancel</a>
+                <button type="submit" class="submit-btn">Update</button>
+            </div>
+        </form>
+    </div>
 @endsection
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/userForm.css') }}">
+@endpush
