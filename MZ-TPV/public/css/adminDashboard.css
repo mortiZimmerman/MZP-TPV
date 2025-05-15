@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #cccfc5;
+    margin: 0; padding: 0;
+}
+header {
+    background: #67675d;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+h1 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 5px;
+}
+h2 {
+    text-align: center;
+    font-weight: normal;
+    color: #999;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.action {
+    background: #e7e6d7;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ccc;
+}
+.action span {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+}
+.management {
+    background: #d9d8c4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.management h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.management p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+.management button {
+    background: black;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.categories {
+    display: flex;
+    justify-content: space-between;
+}
+.category-card {
+    background: #d9d8c4;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+.category-card h4 {
+    margin: 0 0 10px 0;
+}
+.category-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+.dashBoardButtonImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin-top: 20%;
+}
+.category-image {
+    width: 8vh;
+    height: 8vh;
+    position: absolute;
+    border-radius: 20%;
+    margin-top: -1.5vh;
+    margin-left: -20vh;
+}
