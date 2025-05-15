@@ -76,7 +76,7 @@ Then enter this code to create an admin user:
       ```bash
       php artisan serve
 
-10. **(Optional) Install frontend dependencies (if any):**
+10. **Install frontend dependencies:**
 
    ```bash
       npm install && npm run dev
