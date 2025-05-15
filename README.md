@@ -17,8 +17,8 @@ Before starting, make sure you have the following installed:
 1. **Clone the project:**
 
    ```bash
-   git clone https://github.com/your-username/MZ-TPV.git
-   cd MZ-TPV
+  [ git clone https://github.com/your-username/MZ-TPV.git
+   cd MZ-TPV](https://github.com/mortiZimmerman/MZP-TPV.git)
 Install PHP dependencies:
 
 bash
