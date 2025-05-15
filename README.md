@@ -57,11 +57,26 @@ Before starting, make sure you have the following installed:
      php artisan migrate
 
 8. **Start the development server:**
+Run the Laravel Tinker console:
 
-   ```bash
+    ```bash
+      php artisan tinker
+    
+Then enter this code to create an admin user:
+
+      \App\Models\User::create([
+          'name' => 'admin',
+          'email' => 'admin@gmail.com',
+          'password' => bcrypt('admin@1234'),
+          'role' => 'admin',
+      ]);
+
+9. **Start the development server:**
+
+      ```bash
       php artisan serve
 
-9. **(Optional) Install frontend dependencies (if any):**
+10. **(Optional) Install frontend dependencies (if any):**
 
    ```bash
       npm install && npm run dev
