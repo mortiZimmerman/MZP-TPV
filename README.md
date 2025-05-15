@@ -18,65 +18,51 @@ Before starting, make sure you have the following installed:
 
    ```bash
       https://github.com/mortiZimmerman/MZP-TPV.git
+      cd MZ-TPV
 
-Install PHP dependencies:
+2. **Install PHP dependencies:**
 
-bash
-Copiar
-Editar
-composer install
-Create the environment configuration file:
+   ```bash
+      composer install
 
-bash
-Copiar
-Editar
-cp .env.example .env
-Generate application key:
+3. **Create the environment configuration file:**
 
-bash
-Copiar
-Editar
-php artisan key:generate
-Set up the .env file:
+   ```bash
+      cp .env.example .env
 
-Open the .env file in a text editor and update the following lines with your database information:
+4. **Generate application key:**
 
-ini
-Copiar
-Editar
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-Create the database:
+   Open the .env file in a text editor and update the following lines with your database information:
 
-Go to your MySQL client (like phpMyAdmin or CLI) and create a new database with the name you used in .env.
+   ```bash
+      php artisan key:generate
 
-Run the migrations:
+4. **Set up the .env file:**
 
-bash
-Copiar
-Editar
-php artisan migrate
-(Optional) Run seeders to add dummy data:
+   ```bash
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=tpv
+      DB_USERNAME=your_username
+      DB_PASSWORD=your_password
 
-bash
-Copiar
-Editar
-php artisan db:seed
-Start the development server:
+6. **Create the database:**
 
-bash
-Copiar
-Editar
-php artisan serve
-Now visit http://127.0.0.1:8000
+  Go to your MySQL client (like phpMyAdmin or CLI) and create a new database with the name you used in .env.
 
-(Optional) Install frontend dependencies (if any):
+7. **Run the migrations:**
 
-bash
-Copiar
-Editar
-npm install && npm run dev
+   ```bash
+     php artisan migrate
+
+8. **Start the development server:**
+
+   ```bash
+      php artisan serve
+
+9. **(Optional) Install frontend dependencies (if any):**
+
+   ```bash
+      npm install && npm run dev
+
