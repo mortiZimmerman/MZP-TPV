@@ -108,10 +108,10 @@ h2 {
     margin-top: 20%;
 }
 .category-image {
-    width: 8vh;
-    height: 8vh;
+    width: 9vh;
+    height: 9vh;
     position: absolute;
     border-radius: 20%;
     margin-top: -1.5vh;
-    margin-left: -20vh;
+    margin-left: -24vh;
 }
