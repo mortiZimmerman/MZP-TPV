@@ -29,7 +29,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'role' => 'required|in:admin,camarero',
+            'role' => 'required|in:admin,waiter',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
@@ -40,7 +40,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'Usuario creado correctamente.');
+        return redirect()->route('admin.users.index')->with('success', 'User Created.');
     }
 
     // Mostrar un usuario (opcional)
@@ -75,13 +75,13 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.users.index')->with('success', 'Usuario actualizado correctamente.');
+        return redirect()->route('admin.users.index')->with('success', 'User Updated.');
     }
 
     // Borrar usuario
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado correctamente.');
+        return redirect()->route('admin.users.index')->with('success', 'User Deleted.');
     }
 }
