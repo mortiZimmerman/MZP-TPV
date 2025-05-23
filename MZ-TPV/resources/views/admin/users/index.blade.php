@@ -27,7 +27,13 @@
             @foreach ($users as $user)
             <div class="user-entry">
                 <div class="user-info">
-                    <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="User Icon">
+                    @if ($user->role === 'admin')
+                        <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1748026141/representative_and_minimalist_black_and_white_image_of_a_maitre_mked0y.png" alt="Admin Icon">
+                    @elseif ($user->role === 'waiter')
+                        <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="Waiter Icon">
+                    @else
+                        <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="User Icon">
+                    @endif
                     <span>{{ $user->name }}</span>
                 </div>
 
