@@ -21,14 +21,19 @@
                 @error('email') <small class="error">{{ $message }}</small> @enderror
             </div>
 
-            <div class="form-group">
-                <label>Role</label>
-                <div class="role-buttons">
-                    <label><input type="radio" name="role" value="waiter" {{ old('role', $user->role) == 'waiter' ? 'checked' : '' }}> Waiter</label>
-                    <label><input type="radio" name="role" value="admin" {{ old('role', $user->role) == 'admin' ? 'checked' : '' }}> Admin</label>
-                </div>
-                @error('role') <small class="error">{{ $message }}</small> @enderror
-            </div>
+     <div class="form-group">
+    <label>Role</label>
+    <div class="role-buttons">
+        <label>
+            <input type="radio" name="role" value="waiter" {{ old('role', $user->role) == 'waiter' ? 'checked' : '' }}> Waiter
+        </label>
+        <label>
+            <input type="radio" name="role" value="admin" {{ old('role', $user->role) == 'admin' ? 'checked' : '' }}> Admin
+        </label>
+    </div>
+    @error('role') <small class="error">{{ $message }}</small> @enderror
+</div>
+
 
             <div class="form-group">
                 <label for="password">New Password (optional)</label>
