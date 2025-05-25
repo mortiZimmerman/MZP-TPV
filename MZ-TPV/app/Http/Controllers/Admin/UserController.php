@@ -36,11 +36,11 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'role' => $request->role,
-            'password' => Hash::make($request->password),
+            'role' => $request->role, // <-- asegúrate de incluir esto
+            'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'User Created.');
+        return redirect()->route('admin.users.index');
     }
 
     // Mostrar un usuario (opcional)

@@ -45,7 +45,7 @@
                 </div>
             </a>
 
-            <a href="#">
+            <a href="{{ route('admin.users.create') }}">
                 <div class="action" title="Add Waiter">
                     <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/waiter_vdciba.png" alt="Add Waiter" class="dashBoardButtonImage"/>
                     <span>Add Waiter</span>
