@@ -23,22 +23,14 @@
     </style>
 </head>
 <body>
-    <header>
-        <div><strong>Sistema TPV para Bares y Restaurantes</strong></div>
-        <nav>
-            <a href="#">Dashboard Admin</a>
-            <a href="#">Manage Products</a>
-            <a href="#">Manage Tables</a>
-            <a href="#">Manage Orders</a>
-        </nav>
-    </header>
+    @include('admin.partials.header')
 
     <main>
         <h1>Administrator Dashboard</h1>
         <h2>Add products and manage employees</h2>
 
         <section class="quick-actions">
-            <a href="#">
+            <a href="{{ route('admin.products.index') }}">
                 <div class="action" title="Manage Products">
                     <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747330641/stocks_aozyge.png" alt="Manage Products" class="dashBoardButtonImage"/>
                     <span>Manage Products</span>
