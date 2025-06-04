@@ -8,6 +8,7 @@
         <ul class="nav">
             <li><a href="{{ route('admin.dashboard') }}">🖥️ Admin Dashboard</a></li>
             <li><a href="{{ route('admin.users.index') }}">👤 User Management</a></li>
+            <li><a href="{{ route('admin.products.index') }}">📦 Product Management</a></li>
         </ul>
 
         
@@ -20,10 +21,9 @@
 
     <section class="user-management">
         <h1>Manage users</h1>
-        <p>View, Edit, Delete</p>
-
+       
         <div class="users-list">
-            <h2>All Users</h2>
+            
             @foreach ($users as $user)
             <div class="user-entry">
                 <div class="user-info">
