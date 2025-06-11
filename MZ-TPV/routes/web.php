@@ -1,11 +1,10 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\AdminMiddleware;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OtherController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::redirect('/', '/login');
 
@@ -25,13 +24,16 @@ Route::middleware(['auth'])->group(function () {
          ->middleware(AdminMiddleware::class)
          ->name('admin.')
          ->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+             Route::get('/dashboard', function () {
+                 return view('admin.dashboard');
+             })->name('dashboard');
 
-        Route::resource('users', UserController::class);
-        Route::resource('products', ProductController::class);
-    });
+             Route::resource('users', UserController::class);
+             Route::resource('products', ProductController::class);
+         });
+
+    // Aquí añades tus tablas, dentro del middleware 'auth'
+    Route::resource('tables', TableController::class);
 });
 
 Route::get('/admin/other', [OtherController::class, 'index'])
