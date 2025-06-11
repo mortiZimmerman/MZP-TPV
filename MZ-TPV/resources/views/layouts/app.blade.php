@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>TPV System</title>
     <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/adminUserManagement.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminManagement.css') }}">
 
 </head>
 <body>

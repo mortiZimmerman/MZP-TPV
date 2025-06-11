@@ -33,6 +33,9 @@
     flex: 1;
     padding: 2rem;
     background-color: #f5f5ef;
+    height: 100vh;
+    overflow-y: auto;
+
 }
 
 .user-management h1 {
@@ -52,6 +55,7 @@
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
+
 }
 
 .user-info {
@@ -112,4 +116,10 @@ button[type="submit"] {
     display: inline-block;
     border-radius: 6px;
     
+}
+html, body {
+overflow: hidden;
+}
+.users-list .user-entry:last-child {
+    margin-bottom: 5vh;
 }
