@@ -18,17 +18,20 @@ class TableController extends Controller
         return view('tables.create');
     }
 
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'number' => 'required|unique:tables,number',
-            'status' => 'required|in:free,occupied,reserved'
-        ]);
+   public function store(Request $request)
+{
+    $data = $request->validate([
+        'number' => 'required|unique:tables,number',
+        'status' => 'required|in:free,occupied,reserved',
+        'x' => 'required|integer',
+        'y' => 'required|integer'
+    ]);
 
-        Table::create($data);
+    $table = Table::create($data);
 
-        return redirect()->route('tables.index');
-    }
+    return response()->json($table);
+}
+
 
     public function show(Table $table)
     {
@@ -40,21 +43,24 @@ class TableController extends Controller
         return view('tables.edit', compact('table'));
     }
 
-    public function update(Request $request, Table $table)
-    {
-        $data = $request->validate([
-            'number' => 'required|unique:tables,number,' . $table->id,
-            'status' => 'required|in:free,occupied,reserved'
-        ]);
+   public function update(Request $request, Table $table)
+{
+    $data = $request->validate([
+        'number' => 'sometimes|required|unique:tables,number,' . $table->id,
+        'status' => 'sometimes|required|in:free,occupied,reserved',
+        'x' => 'sometimes|required|integer',
+        'y' => 'sometimes|required|integer',
+    ]);
 
-        $table->update($data);
+    $table->update($data);
 
-        return redirect()->route('tables.index');
-    }
+    return response()->json($table);
+}
 
-    public function destroy(Table $table)
-    {
-        $table->delete();
-        return redirect()->route('tables.index');
-    }
+   public function destroy(Table $table)
+{
+    $table->delete();
+
+    return response()->json(['deleted' => true]);
+}
 }
