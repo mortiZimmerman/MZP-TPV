@@ -7,30 +7,27 @@ use Illuminate\Http\Request;
 class TableController extends Controller
 {
 
-    public function index()
-    {
-        $tables = Table::all();
-        return view('tables.index', compact('tables'));
-    }
+   public function index()
+{
+    $tables = Table::paginate(12); // O el número que quieras por página
+    return view('tables.index', compact('tables'));
+}
 
     public function create()
     {
         return view('tables.create');
     }
 
-   public function store(Request $request)
+public function store(Request $request)
 {
     $data = $request->validate([
         'number' => 'required|unique:tables,number',
-        'status' => 'required|in:free,occupied,reserved',
-        'x' => 'required|integer',
-        'y' => 'required|integer'
+        'status' => 'required|in:free,occupied,reserved'
     ]);
-
-    $table = Table::create($data);
-
-    return response()->json($table);
+    Table::create($data);
+    return redirect()->route('tables.index');
 }
+
 
 
     public function show(Table $table)
