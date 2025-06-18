@@ -37,4 +37,24 @@
     display: inline;
     position: absolute;
 }
-
+button, .btn {
+background-color: #5f5f5d !important;
+width: 15vh;
+height: 5vh;
+margin-left: 33vh;
+margin-top: 2vh;
+}
+button:hover, .btn:hover {
+    background-color: #4c4c4a !important;
+}
+.btn-cancel{
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    margin-left: 1vh !important;
+    cursor: pointer;
+}
+.btn-cancel:hover {
+    background-color: #4c4c4a !important;
+}
