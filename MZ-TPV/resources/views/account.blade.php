@@ -12,16 +12,15 @@
             <img src="https://res.cloudinary.com/dandumvvy/image/upload/v1750285793/logo_para_loop_aadtyw.png"
                  alt="Avatar"
                  style="width:80px;height:80px;object-fit:cover;border-radius:50%;">
-            <h3 class="mt-2">{{ auth()->user()->name }}</h3>
-            <p class="text-muted mb-1">{{ auth()->user()->email }}</p>
-            <span class="badge bg-info">{{ ucfirst(auth()->user()->role) }}</span>
+            <h3 class="mt-2"> Welcome: {{ ucfirst(auth()->user()->role) }}</h3>
+            <p class="text-muted mb-1">Email: {{ auth()->user()->email }}</p>
+            <span class="badge bg-info">UserName:  {{ auth()->user()->name }}</span>
         </div>
         <hr>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="btn btn-danger w-100 mb-2">Cerrar sesión</button>
+            <button type="submit" class="btn btn-danger w-100 mb-2">Close session</button>
         </form>
-        <a href="{{ route('profile.edit') }}" class="btn btn-outline-secondary w-100">Editar perfil</a>
     </div>
 </div>
 @endsection
