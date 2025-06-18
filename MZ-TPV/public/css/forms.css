@@ -1,0 +1,20 @@
+.form-control  {
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-left: 33vh; 
+    margin-top: 2vh;
+    width: 30vh;
+    height: 5vh;
+    text-align: center;
+}
+.form-select {
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-left: 33vh; 
+    margin-top: 2vh;
+    width: 30vh;
+    height: 5vh;
+    text-align: center;
+}
