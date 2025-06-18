@@ -10,20 +10,7 @@
 
 <div class="user-management-container">
     {{-- Sidebar --}}
-    <aside class="sidebar">
-        <h2>Manage Tables</h2>
-        <ul class="nav">
-            <li><a href="{{ route('admin.dashboard') }}">🖥️ Admin Dashboard</a></li>
-            <li><a href="{{ route('admin.users.index') }}">👤 User Management</a></li>
-            <li><a href="{{ route('admin.products.index') }}">📦 Product Management</a></li>
-            <li><a href="{{ route('tables.index') }}">🍽️ Table Management</a></li>
-        </ul>
-        <div class="add-user">
-            <a href="{{ route('tables.create') }}" class="add-user-button">
-                ➕ Add New Table
-            </a>
-        </div>
-    </aside>
+    @include('admin.partials.sidebar')
 
     {{-- Main table management area --}}
     <section class="user-management">
