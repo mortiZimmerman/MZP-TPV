@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @include('admin.partials.header')
-
+<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 @section('content')
     <div class="form-container">
         <h1>Edit User</h1>
@@ -10,25 +10,25 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" class="form-control" placeholder="Enter full name" required>
                 @error('name') <small class="error">{{ $message }}</small> @enderror
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}" class="form-control" placeholder="Enter email address" required>
                 @error('email') <small class="error">{{ $message }}</small> @enderror
             </div>
 
      <div class="form-group">
-    <label>Role</label>
+    <label></label>
     <div class="role-buttons">
         <label>
-            <input type="radio" name="role" value="waiter" {{ old('role', $user->role) == 'waiter' ? 'checked' : '' }}> Waiter
+            <input type="radio" name="role" value="waiter" class="formRadio" {{ old('role', $user->role) == 'waiter' ? 'checked' : '' }}> Waiter
         </label>
         <label>
-            <input type="radio" name="role" value="admin" {{ old('role', $user->role) == 'admin' ? 'checked' : '' }}> Admin
+            <input type="radio" name="role" value="admin" class="formRadio2" {{ old('role', $user->role) == 'admin' ? 'checked' : '' }}> Admin
         </label>
     </div>
     @error('role') <small class="error">{{ $message }}</small> @enderror
@@ -36,14 +36,14 @@
 
 
             <div class="form-group">
-                <label for="password">New Password (optional)</label>
-                <input type="password" name="password" id="password">
+                <label for="password"></label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
                 @error('password') <small class="error">{{ $message }}</small> @enderror
             </div>
 
             <div class="form-group">
-                <label for="password_confirmation">Confirm New Password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation">
+                <label for="password_confirmation"></label>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm password">
             </div>
 
             <div class="form-actions">
