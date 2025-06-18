@@ -109,7 +109,8 @@
         </div>
 
         <button type="submit" class="btn-success">Save Product</button>
-        <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.products.index') }}" ><button type="button" class="btn-cancel">Cancel</button></a>
+       
     </form>
 </div>
 @endsection
