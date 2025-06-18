@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 @section('title', 'Edit Product')
+<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 @include('admin.partials.header')
 @section('content')
 <div class="container">
@@ -21,13 +22,14 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+            <label for="name" class="form-label"><span class="text-danger"></span></label>
             <input 
                 type="text"
                 id="name"
                 name="name"
                 class="form-control @error('name') is-invalid @enderror"
                 value="{{ old('name', $product->name) }}"
+                placeholder="Product Name"
                 required
             >
             @error('name')
@@ -36,12 +38,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
+            <label for="description" class="form-label"></label>
             <textarea
                 id="description"
                 name="description"
                 class="form-control @error('description') is-invalid @enderror"
                 rows="3"
+                placeholder="Product Description"
             >{{ old('description', $product->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback">{{ $message }}</div>
@@ -49,7 +52,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Price ($) <span class="text-danger">*</span></label>
+            <label for="price" class="form-label"><span class="text-danger"></span></label>
             <input
                 type="number"
                 id="price"
@@ -58,6 +61,7 @@
                 value="{{ old('price', $product->price) }}"
                 step="0.01"
                 min="0"
+                placeholder="Product Price"
                 required
             >
             @error('price')
@@ -66,7 +70,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="stock" class="form-label">Stock <span class="text-danger">*</span></label>
+            <label for="stock" class="form-label"><span class="text-danger"></span></label>
             <input
                 type="number"
                 id="stock"
@@ -74,6 +78,7 @@
                 class="form-control @error('stock') is-invalid @enderror"
                 value="{{ old('stock', $product->stock) }}"
                 min="0"
+                placeholder="Product Stock"
                 required
             >
             @error('stock')
@@ -82,7 +87,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="category_id" class="form-label">Category <span class="text-danger">*</span></label>
+            <label for="category_id" class="form-label"><span class="text-danger"></span></label>
             <select
                 id="category_id"
                 name="category_id"
