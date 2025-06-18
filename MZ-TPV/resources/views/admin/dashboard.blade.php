@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
-    <style>
-        .action {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .action:hover {
-            transform: scale(1.05);
-        }
-
-        .quick-actions a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
-</head>
+@include('admin.partials.header')
+<link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
 <body>
-    @include('admin.partials.header')
-
+<div id="loader-bg" style="
+        position:fixed;z-index:9999;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;
+        transition:opacity .4s;
+    ">
+        <img src="https://res.cloudinary.com/dandumvvy/image/upload/v1750285793/logo_para_loop_aadtyw.png"
+             alt="Cargando..." style="width:90px;animation:spin 1.6s linear infinite;">
+    </div>
     <main>
         <h1>Administrator Dashboard</h1>
         <h2>Add products and manage employees</h2>
@@ -71,5 +54,18 @@
             </div>
         </section>
     </main>
+        <script>
+    window.addEventListener('load', function(){
+        setTimeout(function(){
+            document.getElementById('loader-bg').style.opacity = 0;
+            setTimeout(function(){
+                document.getElementById('loader-bg').style.display = 'none';
+            }, 400);
+        }, 350); // medio segundo extra para que el fade no sea brusco
+    });
+    </script>
+    <style>
+    @keyframes spin { 100% { transform: rotate(360deg);} }
+    </style>
 </body>
 </html>

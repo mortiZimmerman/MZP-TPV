@@ -2,22 +2,7 @@
 @include('admin.partials.header')
 
 @section('content')
-<div class="user-management-container">
-    {{-- Sidebar --}}
-    <aside class="sidebar">
-        <h2>Manage Orders</h2>
-        <ul class="nav">
-            <li><a href="{{ route('admin.dashboard') }}">🖥️ Admin Dashboard</a></li>
-            <li><a href="{{ route('admin.users.index') }}">👤 User Management</a></li>
-            <li><a href="{{ route('admin.products.index') }}">📦 Product Management</a></li>
-            <li><a href="{{ route('admin.orders.index') }}">🧾 Order Management</a></li>
-        </ul>
-        <div class="add-user">
-            <a href="{{ route('admin.orders.create') }}" class="add-user-button">
-                ➕ Add New Order
-            </a>
-        </div>
-    </aside>
+ @include('admin.partials.sidebar')
 
     <section class="user-management">
         <h1>Order #{{ $order->id }}</h1>

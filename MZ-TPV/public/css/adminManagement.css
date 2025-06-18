@@ -121,5 +121,5 @@ html, body {
 overflow: hidden;
 }
 .users-list .user-entry:last-child {
-    margin-bottom: 5vh;
+    margin-bottom: 20vh;
 }

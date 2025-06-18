@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @include('admin.partials.header')
 
 @section('content')

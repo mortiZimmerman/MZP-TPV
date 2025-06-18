@@ -1,8 +1,10 @@
 {{-- resources/views/admin/products/index.blade.php --}}
 @extends('layouts.app')
+
 @include('admin.partials.header')
 
 @section('content')
+
 <div class="user-management-container">
     {{-- Sidebar --}}
     @include('admin.partials.sidebar')
