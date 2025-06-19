@@ -1,11 +1,8 @@
-<link rel="stylesheet" href="#">
 <header>
     <div><strong>Sistema TPV para Bares y Restaurantes</strong></div>
     <nav>
-       WAITER HEADER EXAMPLE
-        <a href="#">Dashboard Waiter</a>
-        <a href="#">Manage Orders</a>
-        <a href="#">Manage Tables</a>
-        <a href="#">View Products</a>
+        <a href="{{ route('waiter.dashboard') }}">Waiter Dashboard</a>
+        <a href="{{ route('tables.index') }}">Manage Tables</a>
+        <a href="{{ route('orders.index') }}">Manage Orders</a>
     </nav>
 </header>
