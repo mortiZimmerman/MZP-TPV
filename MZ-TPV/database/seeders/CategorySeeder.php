@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
     {
         $foods = Category::create([
             'name'       => 'Foods',
-            'image_url'  => '',
+            'image_url'  => 'https://res.cloudinary.com/dandumvvy/image/upload/v1750329200/foodsG_ykobnq.png',
             'parent_id'  => null,
         ]);
 
@@ -47,7 +47,7 @@ class CategorySeeder extends Seeder
 
         $drinks = Category::create([
             'name'       => 'Drinks',
-            'image_url'  => '',
+            'image_url'  => 'https://res.cloudinary.com/dandumvvy/image/upload/v1750329199/drinksG_xdms0r.png',
             'parent_id'  => null,
         ]);
 
