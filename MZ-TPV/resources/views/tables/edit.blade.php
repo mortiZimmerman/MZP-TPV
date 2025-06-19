@@ -19,6 +19,7 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ route('tables.index') }}" ><button type="button" class="btn-cancel">Cancel</button></a>
     </form>
 </div>
 @endsection

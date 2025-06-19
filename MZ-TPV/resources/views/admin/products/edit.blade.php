@@ -110,7 +110,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Update Product</button>
-        <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.products.index') }}" ><button type="button" class="btn-cancel">Cancel</button></a>
     </form>
 </div>
 @endsection
