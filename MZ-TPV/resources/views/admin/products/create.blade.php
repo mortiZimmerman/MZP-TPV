@@ -86,59 +86,27 @@
         </div>
 
         <div class="mb-3">
-            <div>
-    <select name="category_id" id="category_id" class="form-select" required style="flex: 1;">
-        <option value="">-- Select Category --</option>
-        @foreach($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
-        @endforeach
-    </select>
-    <button type="button" id="add-category-btn" class="addCategoryButton">+</button>
-</div>
-<div id="new-category-box" style="display:none; margin-top:8px; gap:10px; align-items:center;">
-    <input type="text" id="new-category-input" class="form-control" placeholder="New category name" maxlength="50" style="flex:1; min-width:0; margin-right:0;">
-    <button type="button" id="confirm-add-category" class="btn btn-success" style="min-width:80px;">Add</button>
-    <button type="button" id="cancel-add-category" class="btn btn-secondary" style="min-width:80px;">Cancel</button>
-</div>
-
-
-@push('scripts')
-<script>
-document.getElementById('add-category-btn').onclick = function() {
-    document.getElementById('new-category-box').style.display = 'block';
-    document.getElementById('new-category-input').focus();
-};
-document.getElementById('cancel-add-category').onclick = function() {
-    document.getElementById('new-category-box').style.display = 'none';
-    document.getElementById('new-category-input').value = '';
-};
-document.getElementById('confirm-add-category').onclick = async function() {
-    let name = document.getElementById('new-category-input').value.trim();
-    if(!name) return alert('Category name required');
-    let token = document.querySelector('meta[name="csrf-token"]').content;
-    let res = await fetch('{{ route('categories.store') }}', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': token, 'Accept':'application/json'},
-        body: JSON.stringify({ name })
-    });
-    if(res.ok) {
-        let data = await res.json();
-        let select = document.getElementById('category_id');
-        let option = document.createElement('option');
-        option.value = data.id;
-        option.textContent = data.name;
-        select.appendChild(option);
-        select.value = data.id;
-        document.getElementById('new-category-box').style.display = 'none';
-        document.getElementById('new-category-input').value = '';
-        alert('Category created');
-    } else {
-        alert('Error creating category');
-    }
-};
-</script>
-@endpush
-
+            <label for="category_id" class="form-label"><span class="text-danger"></span></label>
+            <select
+                id="category_id"
+                name="category_id"
+                class="form-select @error('category_id') is-invalid @enderror"
+                required
+            >
+                <option value="">-- Select a category --</option>
+                @foreach($categories as $id => $name)
+                    <option 
+                      value="{{ $id }}" 
+                      {{ old('category_id') == $id ? 'selected' : '' }}
+                    >
+                        {{ $name }}
+                    </option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
         <button type="submit" class="btn-success">Save Product</button>
         <a href="{{ route('admin.products.index') }}" ><button type="button" class="btn-cancel">Cancel</button></a>
