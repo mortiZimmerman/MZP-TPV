@@ -80,4 +80,5 @@ Then enter this code to create an admin user:
 
    ```bash
       npm install && npm run dev
+![image](https://github.com/user-attachments/assets/80643d75-31e6-4f38-930f-1f16dbf5cea3)
 
