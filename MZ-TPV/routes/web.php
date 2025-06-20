@@ -15,7 +15,7 @@ Route::redirect('/', '/login');
 // Authenticated routes
 Route::middleware(['auth'])->group(function () {
 
-    // Dashboard for admin and waiter
+    // Dashboard redirection for admin and waiter
     Route::get('/dashboard', function () {
         $role = auth()->user()->role;
         if ($role === 'admin') {
@@ -43,20 +43,21 @@ Route::middleware(['auth'])->group(function () {
 
             Route::resource('users', UserController::class);
             Route::resource('products', ProductController::class);
-            Route::resource('orders', OrderController::class);
+            // Ya NO pongas resource orders aquí
         });
 
-    // Waiter routes (NO role middleware)
+    // Waiter routes (dashboard)
     Route::prefix('waiter')
         ->name('waiter.')
         ->group(function () {
             Route::get('/dashboard', function () {
                 return view('waiter.dashboard');
             })->name('dashboard');
-            Route::resource('orders', OrderController::class)->only([
-                'index', 'show', 'edit', 'update', 'create', 'store'
-            ]);
+            // Ya NO pongas resource orders aquí
         });
+
+    // Orders management for all authenticated
+    Route::resource('orders', OrderController::class);
 
     // Tables management (admin and waiter)
     Route::resource('tables', TableController::class);
