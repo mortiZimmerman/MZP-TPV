@@ -1,5 +1,10 @@
 @extends('layouts.app')
-@include('admin.partials.header')
+@if(auth()->user()->role === 'admin')
+    @include('admin.partials.header')
+@elseif(auth()->user()->role === 'waiter')
+    @include('waiter.partials.header')
+@endif
+
 
 @section('content')
 <div class="user-management-container">
@@ -28,10 +33,11 @@
                         </div>
                     </div>
                     <div class="edit-icon">
-                        <a href="{{ route('admin.orders.edit', $order->id) }}">
+                        <a href="{{ route('orders.edit', $order->id) }}"></a>
+
                             <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747338290/una_imagen_representativa_y_minimalista_para_configuraci%C3%B3n_uvwudk.png" alt="Edit Icon">
                         </a>
-                        <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST"
+                        <form action="{{ route('orders.destroy', $order->id) }}" method="POST"
                               onsubmit="return confirm('Are you sure you want to delete this order?');"
                               style="display:inline;">
                             @csrf
