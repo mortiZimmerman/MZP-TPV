@@ -13,6 +13,7 @@ Before starting, make sure you have the following installed:
 - [Git](https://git-scm.com/)
 
 ## 🚀 Installation - Step by Step
+![image](https://github.com/user-attachments/assets/4bd118e0-6ce1-473f-a59b-a10bdd0ac7b3)
 
 1. **Clone the project:**
 
@@ -80,5 +81,5 @@ Then enter this code to create an admin user:
 
    ```bash
       npm install && npm run dev
-![image](https://github.com/user-attachments/assets/80643d75-31e6-4f38-930f-1f16dbf5cea3)
+
 
