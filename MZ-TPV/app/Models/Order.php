@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
+    
     use HasFactory;
 
     protected $fillable = ['table_id', 'user_id', 'total', 'status'];
@@ -15,6 +16,11 @@ class Order extends Model
     {
         return $this->belongsTo(Table::class);
     }
+    
+public function orderDetails()
+{
+    return $this->hasMany(OrderDetail::class);
+}
 
     public function user()
     {
