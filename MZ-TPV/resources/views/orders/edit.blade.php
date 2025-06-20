@@ -4,7 +4,7 @@
 @elseif(auth()->user()->role === 'waiter')
     @include('waiter.partials.header')
 @endif
-
+<link rel="stylesheet" href="{{ asset('css/orderForm.css') }}">
 @section('content')
 <div class="order-edit-container" style="max-width:680px;margin:48px auto;">
     <h1>Edit Order #{{ $order->id }}</h1>
@@ -24,7 +24,7 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label for="table_id" class="form-label">Table</label>
+            <label for="table_id" class="form-label"></label>
             <select name="table_id" id="table_id" class="form-select" required>
                 <option value="">-- Select Table --</option>
                 @foreach($tables as $table)
@@ -34,7 +34,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="user_id" class="form-label">Waiter</label>
+            <label for="user_id" class="form-label"></label>
             <select name="user_id" id="user_id" class="form-select" required>
                 <option value="">-- Select Waiter --</option>
                 @foreach($users as $user)
@@ -70,8 +70,8 @@
                             <span class="product-qty" id="qty-{{ $product->id }}">{{ $qty }}</span>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-sm btn-primary" onclick="changeQty({{ $product->id }}, 1)">+</button>
-                            <button type="button" class="btn btn-sm btn-secondary" onclick="changeQty({{ $product->id }}, -1)">-</button>
+                            <button type="button" class="btnOrderP" onclick="changeQty({{ $product->id }}, 1)">+</button>
+                            <button type="button" class="btnOrderS" onclick="changeQty({{ $product->id }}, -1)">-</button>
                         </td>
                     </tr>
                 @endforeach
@@ -88,7 +88,7 @@
 
         <button type="submit" class="btn btn-success w-100 mt-2">Save Changes</button>
         <a href="{{ route('orders.index') }}"
- class="btn btn-link w-100 mt-1">Cancel</a>
+ class="btnCancel">Cancel</a>
     </form>
 </div>
 

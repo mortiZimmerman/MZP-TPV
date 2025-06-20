@@ -1,0 +1,152 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-control {
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1.5rem;
+    margin-left: 15rem;
+    width: 90%;
+    max-width: 400px;
+    min-width: 200px;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.form-select {
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1.5rem;
+    margin-left: 9rem;
+    width: 90%;
+    max-width: 400px;
+    min-width: 200px;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.formRadio {
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    margin-left: 4rem;
+    font-size: 1.1rem;
+}
+
+.formRadio2{
+    background-color: #e4e6e0;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-left: 5rem;
+}
+
+td .btn{
+    display: inline-block;
+    margin-right: 1rem;
+}
+button,
+.btn {
+    background-color: #5f5f5d !important;
+    width: 80%;
+    max-width: 250px;
+    height: 3rem;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    font-size: 1.1rem;
+    margin-left: 12rem;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #4c4c4a !important;
+}
+
+.btn-cancel {
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    margin-left: 1rem !important;
+    cursor: pointer;
+    margin-left: 15rem;
+}
+.btnCancel{
+    border-radius: 5px;
+    color: #fff !important;
+    margin-left: 1rem !important;
+    cursor: pointer;
+    margin-left: 15rem;
+    
+}
+.btn-cancel:hover {
+    background-color: #4c4c4a !important;
+}
+
+.addCategoryButton {
+    position: absolute;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+    margin-left: 1rem;
+}
+
+#cancel-add-category {
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    margin-left: 1rem !important;
+    cursor: pointer;
+}
+
+#confirm-add-category {
+    background-color: #5f5f5d !important;
+    width: 80%;
+    max-width: 250px;
+    height: 3rem;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    cursor: pointer;
+}
+.btnOrderP{
+    height: 3rem! important;
+    width: 3rem! important;
+}
+.btnOrderS{
+    height: 3rem! important;
+    width: 3rem! important;
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .form-control,
+    .form-select {
+        font-size: 1.2rem;
+        height: 3.5rem;
+    }
+    button,
+    .btn,
+    #confirm-add-category {
+        font-size: 1.2rem;
+        height: 3.5rem;
+    }
+}
