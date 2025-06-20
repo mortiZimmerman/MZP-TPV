@@ -6,11 +6,12 @@
             <li><a href="{{ route('admin.users.index') }}">👤 User Management</a></li>
             <li><a href="{{ route('admin.products.index') }}">📦 Product Management</a></li>
             <li><a href="{{ route('tables.index') }}">🍽️ Table Management</a></li>
-            <li><a href="{{ route('admin.orders.index') }}">🧾 Order Management</a></li>
+            <li><a href="{{ route('orders.index') }}">
+🧾 Order Management</a></li>
         @elseif(auth()->user()->role === 'waiter')
             <li><a href="#">🪑 Waiter Dashboard</a></li>
             <li><a href="{{ route('tables.index') }}">🍽️ Tables</a></li>
-            <li><a href="{{ route('waiter.orders.index') }}">🧾 My Orders</a></li>
+            <li><a href="{{ route('orders.index') }}">Manage Orders</a></li>
         @endif
     </ul>
     <div class="add-user">
