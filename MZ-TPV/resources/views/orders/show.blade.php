@@ -1,5 +1,9 @@
 @extends('layouts.app')
-@include('admin.partials.header')
+@if(auth()->user()->role === 'admin')
+    @include('admin.partials.header')
+@elseif(auth()->user()->role === 'waiter')
+    @include('waiter.partials.header')
+@endif
 
 @section('content')
  @include('admin.partials.sidebar')
@@ -18,8 +22,9 @@
             <div class="mb-2"><strong>Created at:</strong> {{ $order->created_at->format('d/m/Y H:i') }}</div>
             <div class="mb-2"><strong>Last update:</strong> {{ $order->updated_at->format('d/m/Y H:i') }}</div>
         </div>
-        <a href="{{ route('admin.orders.edit', $order->id) }}" class="btn btn-warning">Edit</a>
-        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary">Back to Orders</a>
+        <a href="{{ route('orders.edit', $order->id) }}">Edit Order</a>
+        <a href="{{ route('orders.index') }}"
+ class="btn btn-secondary">Back to Orders</a>
     </section>
 </div>
 @endsection
