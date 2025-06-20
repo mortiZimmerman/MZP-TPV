@@ -8,6 +8,7 @@
         <a href="{{ route('admin.dashboard') }}">Dashboard Admin</a>
         <a href="{{ route('admin.products.index') }}">Manage Products</a>
         <a href="{{ route('tables.index') }}">Manage Tables</a>
-        <a href="{{ route('admin.orders.index') }}">Manage Orders</a>
+         <a href="{{ route('orders.index') }}">Manage Orders</a>
+
     </nav>
 </header>
