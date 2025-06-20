@@ -1,6 +1,11 @@
 @extends('layouts.app')
-
+@if(auth()->user()->role === 'admin')
+    @include('admin.partials.header')
+@elseif(auth()->user()->role === 'waiter')
+    @include('waiter.partials.header')
+@endif
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 <div class="container">
     <h1>Edit Table {{ $table->number }}</h1>
     <form action="{{ route('tables.update', $table) }}" method="POST">
