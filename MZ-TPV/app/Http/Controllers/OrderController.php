@@ -60,7 +60,7 @@ class OrderController extends Controller
             'price' => Product::find($productId)->price
         ]);
     }}
-        return redirect()->route('admin.orders.index')->with('success', 'Order created!');
+        return redirect()->route('orders.index')->with('success', 'Order created!');
     }
 
     public function show(Order $order)
@@ -118,7 +118,7 @@ public function update(Request $request, Order $order)
         }
     }
 
-    return redirect()->route('admin.orders.index')->with('success', 'Order updated successfully!');
+    return redirect()->route('orders.index')->with('success', 'Order updated successfully!');
 }
 
     public function destroy(Order $order)

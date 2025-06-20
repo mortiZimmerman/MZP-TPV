@@ -11,7 +11,7 @@
         @elseif(auth()->user()->role === 'waiter')
             <li><a href="#">🪑 Waiter Dashboard</a></li>
             <li><a href="{{ route('tables.index') }}">🍽️ Tables</a></li>
-            <li><a href="{{ route('orders.index') }}">Manage Orders</a></li>
+            <li><a href="{{ route('orders.index') }}">🧾 Orders</a></li>
         @endif
     </ul>
     <div class="add-user">
@@ -21,10 +21,8 @@
             <a href="{{ route('tables.create') }}" class="add-user-button">➕ Add New Table</a>
         @elseif(Route::is('admin.users.*'))
             <a href="{{ route('admin.users.create') }}" class="add-user-button">➕ Add New User</a>
-        @elseif(Route::is('admin.orders.*'))
-            <a href="{{ route('admin.orders.create') }}" class="add-user-button">➕ Add New Order</a>
-        @elseif(Route::is('waiter.orders.*'))
-            <a href="{{ route('waiter.orders.create') }}" class="add-user-button">➕ New Order</a>
+        @elseif(Route::is('orders.*'))
+            <a href="{{ route('orders.create') }}" class="add-user-button">➕ Add New Order</a>
         @endif
     </div>
 </aside>

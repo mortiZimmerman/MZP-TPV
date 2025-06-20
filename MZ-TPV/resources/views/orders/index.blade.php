@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="edit-icon">
-                        <a href="{{ route('orders.edit', $order->id) }}"></a>
+                        <a href="{{ route('orders.edit', $order->id) }}">
 
                             <img src="https://res.cloudinary.com/duhatfjms/image/upload/v1747338290/una_imagen_representativa_y_minimalista_para_configuraci%C3%B3n_uvwudk.png" alt="Edit Icon">
                         </a>
