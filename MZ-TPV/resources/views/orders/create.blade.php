@@ -1,5 +1,9 @@
 @extends('layouts.app')
-@include('admin.partials.header')
+@if(auth()->user()->role === 'admin')
+    @include('admin.partials.header')
+@elseif(auth()->user()->role === 'waiter')
+    @include('waiter.partials.header')
+@endif
 
 @section('content')
 <div class="order-create-container" style="max-width:680px;margin:48px auto;">
@@ -79,7 +83,8 @@
         <input type="hidden" name="products" id="products-input">
 
         <button type="submit" class="btn btn-success w-100 mt-2">Save Order</button>
-        <a href="{{ route('admin.orders.index') }}" class="btn btn-link w-100 mt-1">Cancel</a>
+       <a href="{{ route('orders.index') }}"
+ class="btn btn-link w-100 mt-1">Cancel</a>
     </form>
 </div>
 
